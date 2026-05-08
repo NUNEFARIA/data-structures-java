@@ -1,13 +1,19 @@
-import Lista.ListaEncadeada;
+import staticStrutures.queue.Fila;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
-        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        Fila<String> fila = new Fila<>(10);
         
-        lista.adiciona(1);
+        fila.adiciona("Gustavo");
+        System.out.println(fila);
+        fila.adiciona("Mateus");
+        System.out.println(fila);
+        fila.adiciona("Maria");
+        System.out.println(fila);
+        fila.retira();
+        System.out.println(fila);
         
-        System.out.println(lista);
-        System.out.println(lista.getTamanho());
+        
     }
 }
