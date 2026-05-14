@@ -2,18 +2,18 @@ package hashMap;
 
 public class Entry<K, V> {
     
-    private K kay;
+    private K key;
     private V value;
     private Entry<K, V> next;
     
     public Entry(K kay, V value) {
-        this.kay = kay;
+        this.key = kay;
         this.value = value;
         this.next = null;
     }
     
-    public K getKay() {
-        return kay;
+    public K getKey() {
+        return key;
     }
     
     public Entry<K, V> getNext() {
@@ -32,7 +32,7 @@ public class Entry<K, V> {
         this.next = next;
     }
     
-    public void setKay(K kay) {
-        this.kay = kay;
+    public void setKey(K key) {
+        this.key = key;
     }
 }

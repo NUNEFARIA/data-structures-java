@@ -1,10 +1,26 @@
 package hashMap;
 
-public class HashMap<K, T> {
+public class HashMap<K, V> {
 
-    private Bucket<K, T>[] buckets;
+    private Bucket<K, V>[] buckets;
     
-    public HashMap() {
-        this.buckets = new Bucket[10];
+    public HashMap(int capacity) {
+        this.buckets = new Bucket[capacity];
+    }
+    
+    private int hash(K key) {
+        return Math.abs(key.hashCode() % buckets.length);
+    }
+    
+    public void put(K key, V value) {
+        
+        int index = this.hash(key);
+        
+        if (buckets[index] == null) {
+            buckets[index] = new Bucket<>();
+        }
+        
+        buckets[index].put(key, value);
+        
     }
 }
