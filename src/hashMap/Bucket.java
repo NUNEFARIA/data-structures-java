@@ -49,7 +49,27 @@ public class Bucket<K, V> {
         return null;
     }
     
-    // remove()
+    public void remove(K key) {
+        
+        if (this.firstEntry == null) {
+            return;
+        }
+        if (this.firstEntry.getKey().equals(key)) {
+            this.firstEntry = this.firstEntry.getNext();
+            return;
+        }
+        
+        Entry<K,V> tempEntry = this.firstEntry;
+        
+        while (tempEntry.getNext() != null) {
+            if (tempEntry.getNext().getKey().equals(key)) {
+                tempEntry.setNext(tempEntry.getNext().getNext());
+                return;
+            }
+            tempEntry = tempEntry.getNext();
+        }
+        
+    }
     // containsKey()
     // toString()
 }

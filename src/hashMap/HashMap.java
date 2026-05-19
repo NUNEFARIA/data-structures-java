@@ -35,4 +35,16 @@ public class HashMap<K, V> {
        return this.buckets[index].get(key);
        
     }
+    
+    public void remove(K key) {
+        
+        int index = this.hash(key);
+        
+        if (this.buckets[index] == null) {
+            return;
+        }
+        
+        this.buckets[index].remove(key);
+        
+    }
 }
