@@ -12,7 +12,7 @@ public class Bucket<K, V> {
         
         Entry<K,V> newEntry = new Entry<>(key,value);
         
-        if (this.firstEntry == null) {
+        if (this.firstEntry.equals(null)) {
             this.firstEntry = newEntry;
             return;
         }
@@ -34,4 +34,22 @@ public class Bucket<K, V> {
             tempEntry = tempEntry.getNext();
         }
     }
+    
+    public V get(K key) {
+        
+        Entry<K,V> tempEntry = this.firstEntry;
+        
+        while (tempEntry != null) {
+            if (tempEntry.getKey().equals(key)) {
+                return tempEntry.getValue();
+            }
+            tempEntry = tempEntry.getNext();
+        }
+        
+        return null;
+    }
+    
+    // remove()
+    // containsKey()
+    // toString()
 }

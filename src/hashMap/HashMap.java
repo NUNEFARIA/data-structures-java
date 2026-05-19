@@ -16,11 +16,23 @@ public class HashMap<K, V> {
         
         int index = this.hash(key);
         
-        if (buckets[index] == null) {
-            buckets[index] = new Bucket<>();
+        if (this.buckets[index] == null) {
+            this.buckets[index] = new Bucket<>();
         }
         
         buckets[index].put(key, value);
         
+    }
+    
+    public V get(K key) {
+        
+        int index = this.hash(key);
+        
+        if (this.buckets[index] == null) {
+            return null;
+        }
+        
+       return this.buckets[index].get(key);
+       
     }
 }
