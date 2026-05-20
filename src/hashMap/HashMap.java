@@ -47,4 +47,8 @@ public class HashMap<K, V> {
         this.buckets[index].remove(key);
         
     }
+    
+    public boolean containsKey(K key) {
+        return (get(key) != null);
+    }
 }
