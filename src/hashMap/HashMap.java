@@ -1,5 +1,8 @@
 package hashMap;
 
+import java.util.Arrays;
+import java.util.StringJoiner;
+
 public class HashMap<K, V> {
 
     private Bucket<K, V>[] buckets;
@@ -50,5 +53,18 @@ public class HashMap<K, V> {
     
     public boolean containsKey(K key) {
         return (get(key) != null);
+    }
+    
+    @Override
+    public String toString() {
+        
+        StringBuilder builder = new StringBuilder();
+        
+        for (Bucket bucket: buckets) {
+            builder.append("\n");
+            builder.append(bucket);
+        }
+        
+        return builder.toString();
     }
 }

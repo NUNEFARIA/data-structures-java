@@ -1,5 +1,7 @@
 package hashMap;
 
+import java.util.StringJoiner;
+
 public class Bucket<K, V> {
     
     private Entry<K, V> firstEntry;
@@ -71,6 +73,13 @@ public class Bucket<K, V> {
         
     }
     
-    // containsKey()
-    // toString()
+    @Override
+    public String toString() {
+        
+        StringBuilder builder = new StringBuilder();
+        
+        builder.append(firstEntry);
+        
+        return builder.toString();
+    }
 }

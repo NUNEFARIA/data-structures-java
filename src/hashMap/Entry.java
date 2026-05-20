@@ -1,5 +1,7 @@
 package hashMap;
 
+import java.util.StringJoiner;
+
 public class Entry<K, V> {
     
     private K key;
@@ -34,5 +36,17 @@ public class Entry<K, V> {
     
     public void setKey(K key) {
         this.key = key;
+    }
+    
+    @Override
+    public String toString() {
+        
+        StringBuilder builder = new StringBuilder();
+        
+        builder.append("[K:" + key);
+        builder.append("|V:" + value);
+        builder.append("] " + next);
+        
+        return builder.toString();
     }
 }
