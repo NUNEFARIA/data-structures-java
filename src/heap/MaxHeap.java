@@ -114,7 +114,7 @@ public class MaxHeap<T extends Comparable<T>> {
         return this.maxHeap[0];
     }
     
-    public T remove(int index) {
+    public T remove() {
         
         if (this.size == 0) {
             throw new RuntimeException("Heap is empty");
