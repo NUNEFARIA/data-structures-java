@@ -51,6 +51,38 @@ public class MaxHeap<T extends Comparable<T>> {
     
     }
     
+    private void heapifyDown() {
+        
+        int index = 0;
+        
+        while (leftSon(index) < size) {
+            
+            int largerChild = leftSon(index);
+            
+            if (
+                    rightSon(index) < size &&
+                            maxHeap[rightSon(index)].compareTo(
+                                    maxHeap[largerChild]
+                            ) > 0
+            ) {
+                
+                largerChild = rightSon(index);
+            }
+            
+            if (
+                    maxHeap[index].compareTo(
+                            maxHeap[largerChild]
+                    ) >= 0
+            ) {
+                break;
+            }
+            
+            swap(index, largerChild);
+            
+            index = largerChild;
+        }
+    }
+    
     public void insert (T value) {
         
         if (size == capacity) {
