@@ -21,5 +21,7 @@ public class Main {
         maxHeap.insert(11);
         System.out.println(maxHeap);maxHeap.insert(10);
         System.out.println(maxHeap);
+        
+        System.out.println(maxHeap.peek());
     }
 }

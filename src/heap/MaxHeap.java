@@ -64,7 +64,14 @@ public class MaxHeap<T extends Comparable<T>> {
         this.size++;
     }
     
-//    peek()
+    public T peek() {
+        if (this.size == 0) {
+            throw new RuntimeException("Heap is empty");
+        }
+        
+        return this.maxHeap[0];
+    }
+    
 //    remove()
 //    heapifyDown()
     
