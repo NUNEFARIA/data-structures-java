@@ -24,8 +24,30 @@ public class MaxHeap<T extends Comparable<T>> {
         this.maxHeap = maxHeap;
     }
     
-    private void heapifyUp(int size) {
+    private int parent(int index) {
+        return (index - 1) / 2;
+    }
     
+    private void swap(int a, int b) {
+        
+        T temp = this.maxHeap[a];
+        
+        this.maxHeap[a] = maxHeap[b];
+        
+        this.maxHeap[b] = temp;
+    }
+    
+    private void heapifyUp(int index) {
+        
+        while ( index > 0 && this.maxHeap[index].compareTo(
+                        this.maxHeap[this.parent(index)]) > 0
+        ) {
+            
+            this.swap(index, this.parent(index));
+            
+            index = parent(index);
+            
+        }
     
     }
     
